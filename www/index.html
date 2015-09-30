@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="mlcApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Mauricio Farinelli">
+    <meta name="application-name" content="My Lottery Checker - Canada">
+    <title data-i18n="app_title"></title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div ng-controller="MenuController" class="main-wrapper" ng-class="{'is-opened': isMainMenuOpened }">
+    <div class="nav-offcanvas">
+        <h3 data-i18n="nav_title"></h3>
+        <nav>
+            <ul class="list-unstyled">
+                <li class="provinces"><span class="subtitle h3" data-i18n="nav_label_provinces"></span></li>
+
+                <li ng-click="openOntarioMenu()" class="province"><a class="h3">Ontario <span class="arrow-open"></span></a>
+                    <ul ng-class="{'is-hidden': !isOntarioMenuOpened }">
+                        <li><a class="h3" data-require="lotto649" data-province="on" href="#/lottery649-on" ng-click="toggleMenu()">Lotto 6/49 <span class="arrow-right"></span></a></li>
+                        <li><a class="h3" data-require="ontario49" data-province="on" href="#/ontario49" ng-click="toggleMenu()">Ontario 49 <span class="arrow-right"></span></a></li>
+                    </ul>
+                </li>
+                <li ng-click="openQuebecMenu()" class="province"><a class="h3">Québec <span class="arrow-open"></span></a>
+                    <ul ng-class="{'is-hidden': !isQuebecMenuOpened }">
+                        <li><a class="h3" data-require="lotto649" data-province="qc" href="#/lottery649-qc" ng-click="toggleMenu()">Lotto 6/49 <span class="arrow-right"></span></a></li>
+                        <li><a class="h3" data-require="quebec49" data-province="qc" href="#/quebec49" ng-click="toggleMenu()">Québec 49 <span class="arrow-right"></span></a></li>
+                    </ul>
+                </li>
+                <li class="provinces"><a class="h3 reset-app">Reset app</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content-wrapper">
+        <header class="header clearfix">
+            <div class="icon-menu-toggle">
+                <a ng-click="toggleMenu()" class="toggle-open"></a>
+            </div>
+            <h1 data-i18n="app_title"></h1><img src="img/flag_canada.png" alt="Canada" />
+        </header>
+
+        <div class="content" ng-view>
+            <!-- The content of each lottery page - tmp initial content will be inserted here -->
+        </div>
+    </div>
+</div>
+
+<script data-main="js/config.require" src="js/require.js"></script>
+
+</body>
+</html>

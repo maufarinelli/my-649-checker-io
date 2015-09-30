@@ -1,0 +1,5 @@
+<div ng-controller="BillboardController" class="billboard text-billboard">
+    <p ng-hide="phrasesMyNumber.length === 0" ng-repeat="phrase in phrasesMyNumber">{{phrase.index}}: {{phrase.phrase}}</p>
+    <p ng-hide="!phraseExtra.phrase">{{phraseExtra.index}}: {{phraseExtra.phrase}}</p>
+    <p ng-hide="!phraseGuaranteed.phrase">{{phraseGuaranteed.index}}: {{phraseGuaranteed.phrase}}</p>
+</div>

@@ -1,0 +1,9 @@
+<div ng-controller="ExtraController" class="row extra-wrapper">
+    <div class="number clearfix" ng-class="{'is-hidden': !hasMyExtra}">
+        <span class="set-order">{{extraTitle}}</span>
+        <ul ng-model="myExtra">
+            <li ng-repeat="number in myExtra" ng-class="{'text-green text-bold': number.status}">{{number.n}}</li>
+        </ul>
+        <button ng-click="deleteExtra()" class="btn btn-warning btn-del-extra">{{buttonDeleteExtra}}</button>
+    </div>
+</div>

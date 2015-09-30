@@ -1,0 +1,9 @@
+<div ng-controller="GuaranteedController" class="row guaranteed-prize-wrapper">
+    <div class="number clearfix" ng-class="{'is-hidden': !hasMyGuaranteed}">
+        <p ng-model="myGuaranteedNumber">
+            <span class="set-order">{{guaranteedTitle}}</span>
+            <span ng-class="{'text-green text-bold': myGuaranteedNumber.status}">{{myGuaranteedNumber.n}}</span>
+            <button ng-click="deleteGuaranteed()" class="btn btn-warning btn-del-guaranteed">{{buttonDeleteGuaranteed}}</button>
+        </p>
+    </div>
+</div>

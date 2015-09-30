@@ -1,0 +1,11 @@
+<div class="row row-addbutton text-center">
+    <button ng-click="toggleInputExtra()" class="btn btn-default add-new-extra">{{buttonAdd}}</button>
+
+    <div class="row choose-extra" ng-class="{'is-hidden': !isInputExtraActivated}">
+        <div class="col-md-12 text-center form-inline">
+            <p class="text-warning" ng-class="{'is-hidden': isExtraValid}">{{errorMessage}}</p>
+            <input ng-model="rawMyExtra" type="text" class="form-control" placeholder="0000000" maxlength="7" value="" />
+            <button ng-click="saveExtra()" class="btn btn-success" type="button">{{buttonSave}}</button>
+        </div>
+    </div>
+</div>

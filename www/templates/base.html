@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <img class="loading-icon" ng-if="!readyLastDraw" src="img/loading.gif" alt=""/>
+        <div ng-if="readyLastDraw" class="col-md-12 last-draw">
+            <div ng-include="templateLastDraw" class="row"></div>
+        </div>
+    </div>
+
+    <div my-numbers-directive></div>
+
+    <div my-extra-directive></div>
+
+    <div my-guaranteed-directive></div>
+
+    <div ng-controller="AddNumbersController" class="row-addbutton">
+        <div add-numbers-directive
+            is-activate="isKeyboardActivated"
+            is-selected-exceeded="isSelectedNumbersExceeded"
+            buttons-selected-model="buttonsSelectedModel"
+            delele-all-numbers-set="deleleAllNumbersSet()"
+            save-numbers="saveNumbers()">
+        </div>
+    </div>
+
+    <div ng-controller="AddExtraController">
+        <div add-extra-directive 
+            province="{{province}}"
+            button-add="buttonAddExtra"
+            button-save="{{buttonSaveExtra}}" 
+            error-message="{{errorMessageExtra}}" 
+            is-activated="isInputExtraActivated" 
+            is-extra-valid="isExtraValid" 
+            save-extra="saveExtra()"
+            raw-my-extra="rawMyExtra">
+        </div>
+    </div>
+
+    <div ng-controller="AddGuaranteedController">
+        <div add-guaranteed-directive
+             sort="{{sort}}"
+             button-add="buttonAddGuaranteed"
+             button-save="{{buttonSaveGuaranteed}}"
+             error-message="{{errorMessageGuaranteed}}"
+             is-activated="isInputGuaranteedActivated"
+             is-guaranteed-valid="isGuaranteedValid"
+             save-guaranteed="saveGuaranteed()"
+             raw-my-guaranteed="rawMyGuaranteed">
+        </div>
+    </div>
+
+    <div billboard-directive></div>
+</div>

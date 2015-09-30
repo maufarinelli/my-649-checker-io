@@ -1,0 +1,14 @@
+<div ng-controller="MyNumbersController" class="row my-numbers">
+    <h4>{{myNumbersTitle}}</h4>
+    <div class="number clearfix">
+        <ul ng-model="myNumbers">
+            <li ng-repeat="numberSet in myNumbers">
+                <button id="btn-delete-{{$index}}" ng-click="deleteSetOfNumbers($event)" class="btn btn-warning">{{buttonDelete}}</button>
+                <ul>
+                    <li class="set-order">{{$index}}: </li>
+                    <li ng-repeat="number in numberSet" ng-class="{'text-green text-bold': number.status}">{{number.n}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

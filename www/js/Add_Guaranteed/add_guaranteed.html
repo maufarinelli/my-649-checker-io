@@ -1,0 +1,11 @@
+<div ng-show="sort == 'lotto649'" class="row text-center">
+    <button ng-click="toggleGuaranteedExtra()" class="btn btn-default add-new-guaranteed">{{buttonAdd}}</button>
+
+    <div class="row choose-guaranteed" ng-class="{'is-hidden': !isInputGuaranteedActivated}">
+        <div class="col-md-12 text-center form-inline">
+            <p class="text-warning" ng-class="{'is-hidden': isGuaranteedValid}" >{{errorMessage}}</p>
+            <input ng-model="rawMyGuaranteed" class="form-control" placeholder="00000000-00" maxlength="11" value="" />
+            <button ng-click="saveGuaranteed()" class="btn btn-success" type="button">{{buttonSave}}</button>
+        </div>
+    </div>
+</div>

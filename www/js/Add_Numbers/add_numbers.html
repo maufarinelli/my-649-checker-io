@@ -1,0 +1,14 @@
+<div class="row row-addbutton">
+    <div class="col-md-12 text-center">
+        <button ng-click="toggleKeyboard()" class="btn btn-default">{{addNumbersButton}}</button>
+        <button ng-click="deleleAllNumbersSet()" class="btn btn-warning">{{deleteAllNumbersButton}}</button>
+    </div>
+</div>
+
+<div class="row choose-numbers" ng-class="{'is-hidden': !isKeyboardActivated}">
+    <div class="col-md-12">
+        <p class="text-warning" ng-class="{'is-hidden': !isSelectedNumbersExceeded}">{{errorMessageSetNumbers}}</p>
+        <button ng-repeat="button in buttonsChooseNumbers" type="button" data-button-selected="false" ng-click="selectedNumber($event)" class="btn btn-default btn-choose-numbers" value="{{button.value}}">{{button.text}}</button>
+        <button ng-click="saveNumbers()" id="save-numbers" class="btn btn-success" type="button">{{saveNumbersButton}}</button>
+    </div>
+</div>
